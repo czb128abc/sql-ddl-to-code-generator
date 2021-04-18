@@ -6,8 +6,11 @@
   "module": "dist/index.esm.js",
   "browser": "dist/index.umd.js",
   "bin": {
-    "coderd": "dist/index.cjs.js"
+    "sql-ddl-to-code-generator": "./dist/index.esm.js"
   },
+  "files":[
+    "dist"
+  ],
   "scripts": {
     "build": "rm -rf output && rollup -c && npm start",
     "build:types": "tsc --project ./tsconfig.json --declaration --declarationDir dist/types",
