@@ -1,0 +1,64 @@
+{
+  "name": "sql-ddl-to-code-generator",
+  "version": "1.0.0",
+  "description": "sql-ddl-to-code-generator",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "browser": "dist/index.umd.js",
+  "bin": {
+    "coderd": "dist/index.cjs.js"
+  },
+  "scripts": {
+    "build": "rm -rf output && rollup -c && npm start",
+    "build:types": "tsc --project ./tsconfig.json --declaration --declarationDir dist/types",
+    "dev": "rollup -c -w",
+    "start": "node dist/index.cjs.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
+    "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx ",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js",
+    "**/*.{js,jsx,tsx,ts,less,md,json}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
+  },
+  "keywords": [
+    "code"
+  ],
+  "author": "czb128abc",
+  "license": "ISC",
+  "dependencies": {
+    "art-template": "^4.13.2",
+    "change-case-all": "^1.0.14",
+    "json-schema": "^0.3.0",
+    "moment": "^2.29.1",
+    "sql-ddl-to-json-schema": "^4.0.4"
+  },
+  "devDependencies": {
+    "@types/json-schema": "^7.0.7",
+    "@types/ms": "^0.7.31",
+    "@types/node": "^14.14.37",
+    "@umijs/fabric": "^2.5.7",
+    "eslint": "^7.24.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^10.5.4",
+    "rollup": "^2.45.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-typescript": "^1.0.1",
+    "ts-node": "^9.1.1",
+    "tslib": "^2.2.0",
+    "typescript": "^4.2.4"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
+}
