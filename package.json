@@ -37,6 +37,7 @@
   "dependencies": {
     "art-template": "^4.13.2",
     "change-case-all": "^1.0.14",
+    "dotenv": "^8.2.0",
     "json-schema": "^0.3.0",
     "moment": "^2.29.1",
     "sql-ddl-to-json-schema": "^4.0.4"

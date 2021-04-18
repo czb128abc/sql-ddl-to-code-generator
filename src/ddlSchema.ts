@@ -16,6 +16,7 @@ function convertSchemaData(srcJsonSchema: JSONSchema7) {
 }
 
 export function readAllSql(filePath: string): JSONSchema7[] {
+  console.info('读取 sql 文件,等待写入文件');
   const ddlSql = readFile(filePath);
   const parser = new Parser('mysql');
   /**

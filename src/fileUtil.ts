@@ -42,6 +42,7 @@ export function readFile(path: string): string {
 
 export function writeFile(dir: string, path: string, text: string) {
   try {
+    console.log('写入文件', path);
     fs.mkdirSync(dir, { recursive: true });
     fs.writeFileSync(path, text, { encoding: 'utf-8' });
   } catch (error) {

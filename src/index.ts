@@ -64,7 +64,8 @@ export function dealJsonSchemas(schema: JSONSchema7) {
 }
 
 export function main() {
-  const list = readAllSql(`${config.currentPath}/sql-ddl.sql`);
+  console.info('开始执行');
+  const list = readAllSql(config.sqlFilePath);
   const data = list.map((item) => {
     return dealJsonSchemas(item);
   });
